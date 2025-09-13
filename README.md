@@ -1,8 +1,6 @@
 # Fold: The Complete Financial Life Story
 ## Product Narrative & Technical Deep Dive
 
----
-
 ## Executive Summary: The Fold Story
 
 Fold tells a compelling story about transforming personal finance from a scattered, complex burden into an intelligent, unified command center for your financial life. This isn't just another budgeting app—it's a comprehensive financial operating system that understands, organizes, and optimizes your entire monetary ecosystem.
@@ -182,6 +180,7 @@ Fold's onboarding story is fundamentally about **trust transformation**—taking
 #### 1.2 User Experience Journey: Step-by-Step Onboarding Narrative
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Fold Onboarding: From Stranger to Financial Insider
     section Trust Building (Authentication)
@@ -221,6 +220,7 @@ journey
 #### 1.3 Technical Sequence: How the System Builds User Confidence
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -234,7 +234,7 @@ sequenceDiagram
     participant DataSync as Data Sync Engine
     participant Dashboard as Dashboard Service
     
-    rect rgb(240,248,255)
+    rect rgb(45,55,70)
     Note over User,AuthService: Phase 1: Trust Building (Authentication)
     User->>FoldApp: Download and open app
     FoldApp->>User: Display professional welcome interface
@@ -247,7 +247,7 @@ sequenceDiagram
     FoldApp->>User: Access granted (first trust milestone achieved)
     end
     
-    rect rgb(248,255,248)
+    rect rgb(45,65,45)
     Note over User,UserService: Phase 2: Identity Formation (Profile Setup)
     FoldApp->>UserService: Create user profile
     User->>FoldApp: Enter full name
@@ -257,7 +257,7 @@ sequenceDiagram
     FoldApp->>User: Profile setup complete (personalization begins)
     end
     
-    rect rgb(255,248,240)
+    rect rgb(70,60,45)
     Note over User,BankFIP: Phase 3: Financial Discovery (Account Linking)
     FoldApp->>AAService: Initialize Account Aggregator flow
     User->>FoldApp: Select bank type for account linking
@@ -274,7 +274,7 @@ sequenceDiagram
     AAService->>User: Display discovered accounts (competence demonstrated)
     end
     
-    rect rgb(248,248,255)
+    rect rgb(55,45,70)
     Note over User,Dashboard: Phase 4: Data Sync & First Dashboard Load
     User->>FoldApp: Select data sync preference (Morning/Noon/Evening/Night)
     FoldApp->>DataSync: Configure sync schedule
@@ -325,6 +325,7 @@ sequenceDiagram
 
 **2. Trust-Building Sequence** *(observed flow)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     A[Phone Verification] -->|Familiar process| B[Profile Setup]
     B -->|Personal information| C[AA Introduction]
@@ -358,6 +359,7 @@ graph TB
 
 **Authentication Service Architecture**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart TB
     subgraph "Authentication Layer"
         A[Phone Verification Service]
@@ -423,6 +425,7 @@ flowchart TB
 
 **Security Architecture During Onboarding**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart LR
     subgraph "Security Layers"
         A[Device Fingerprinting]
@@ -490,6 +493,7 @@ The moment after Fold's onboarding completes, users experience what we call the 
 #### 2.2 User Experience Journey: The First Dashboard Load Revelation
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title First Dashboard Load: Financial Life Transformation
     section Initial Expectation
@@ -523,6 +527,7 @@ journey
 #### 2.3 Technical Sequence: How AA Data Becomes Financial Intelligence
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -535,7 +540,7 @@ sequenceDiagram
     participant NetWorth as Net Worth Calculator
     participant Widgets as Widget Services
     
-    rect rgb(240,248,255)
+    rect rgb(45,55,70)
     Note over User,BankFIP: Phase 1: AA Data Extraction (Background)
     DataSync->>FinvuAA: Request historical financial data
     FinvuAA->>BankFIP: Fetch transactions, balances, account details
@@ -543,7 +548,7 @@ sequenceDiagram
     FinvuAA-->>DataSync: Deliver comprehensive data payload
     end
     
-    rect rgb(248,255,248)  
+    rect rgb(45,65,45)  
     Note over DataSync,AggService: Phase 2: Intelligence Processing (Background)
     DataSync->>MLEngine: Process raw transactions for categorization
     MLEngine->>MLEngine: Apply merchant recognition and spending categorization
@@ -554,7 +559,7 @@ sequenceDiagram
     NetWorth-->>AggService: Return comprehensive financial metrics
     end
     
-    rect rgb(255,248,240)
+    rect rgb(70,60,45)
     Note over User,Widgets: Phase 3: Dashboard Population & Revelation  
     User->>Dashboard: Complete onboarding, load dashboard
     Dashboard->>Widgets: Request all widget data
@@ -565,7 +570,7 @@ sequenceDiagram
     User->>User: Experience "financial discovery" moment
     end
     
-    rect rgb(248,248,255)
+    rect rgb(55,45,70)
     Note over User,Dashboard: Phase 4: Interactive Exploration
     User->>Dashboard: Explore individual widgets and categories  
     Dashboard->>Widgets: Request detailed drill-down data
@@ -623,6 +628,7 @@ sequenceDiagram
 **Data Processing Pipeline** *(inferred from observed behavior)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart TD
     subgraph "AA Data Ingestion"
         A[Finvu AA Data Streams]
@@ -724,6 +730,7 @@ Fold's dashboard features **8 customizable widgets** *(observed during app usage
 
 **Widget Architecture Overview** *(observed layout)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Fold Dashboard - 8 Customizable Widgets"
         A["Net Worth Widget - Your Financial Stock Ticker"]
@@ -762,6 +769,7 @@ graph TB
 
 **User Experience Journey**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Net Worth Widget: Personal Financial Ticker Experience
     section Setup & Discovery
@@ -914,6 +922,7 @@ journey
 **Inferred Technical Architecture**:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -925,7 +934,7 @@ sequenceDiagram
     participant InvestDomain as Investments Domain
     participant BillsDomain as Bills Domain
     
-    rect rgb(240,248,255)
+    rect rgb(45,55,70)
     Note over AggEngine,BillsDomain: Background Processing (Scheduled)
     AggEngine->>TxnDomain: Request transaction summaries
     AggEngine->>AccountsDomain: Request balance updates
@@ -940,7 +949,7 @@ sequenceDiagram
     AggEngine->>WidgetCache: Store pre-computed widget data
     end
     
-    rect rgb(248,255,248)
+    rect rgb(45,65,45)
     Note over User,Dashboard: User Dashboard Request (Real-time)
     User->>Dashboard: Open dashboard
     Dashboard->>WidgetCache: Request all widget data
@@ -986,6 +995,7 @@ sequenceDiagram
 **The Personalization Engine** *(inferred architecture)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart TB
     subgraph "User Preferences Layer"
         A[Widget Ordering]
@@ -1028,6 +1038,7 @@ flowchart TB
 **Cross-Domain Integration Pattern** *(inferred from observed behavior)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Dashboard Orchestration Layer"
         A[Dashboard Service]
@@ -1128,6 +1139,7 @@ This is where Fold's true competitive advantage becomes clear. While other PFM a
 #### 4.2 User Experience Journey: From Transaction Notification to Financial Insight
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Transaction Detective: From Raw Data to Financial Intelligence
     section Transaction Arrival
@@ -1168,6 +1180,7 @@ The Transactions Domain serves as Fold's foundational layer, processing raw fina
 Based on your detailed domain analysis and observed system behavior, here's the comprehensive transaction architecture:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart TB
     subgraph "Ingestion Layer"
         AAIngest["AA Ingestion Service"]
@@ -1258,6 +1271,7 @@ flowchart TB
 ##### 5.3.2 Data Flow & Processing Pipeline
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant Bank as Bank/FIP
@@ -1272,14 +1286,14 @@ sequenceDiagram
     participant Domains as Other Domains
     participant User as User Interface
 
-    rect rgb(240,248,255)
+    rect rgb(45,55,70)
     Note over Bank,Ingestion: Phase 1: Transaction Discovery & Ingestion
     Bank->>FinvuAA: New transaction data available
     FinvuAA->>Ingestion: Deliver encrypted transaction payload
     Ingestion->>Normalizer: Raw transaction data
     end
 
-    rect rgb(248,255,248)
+    rect rgb(45,65,45)
     Note over Normalizer,TxnDB: Phase 2: Intelligence Processing
     Normalizer->>MLEngine: Standardized transaction format
     MLEngine->>MLEngine: Analyze merchant, amount, description patterns
@@ -1290,14 +1304,14 @@ sequenceDiagram
     Deduper->>TxnDB: Store final processed transaction
     end
 
-    rect rgb(255,248,240)
+    rect rgb(70,60,45)
     Note over TxnDB,User: Phase 3: Event Publishing & UI Updates
     TxnDB->>EventBus: Publish transaction.created event
     EventBus->>Domains: Notify Spending, Cash Flow, Net Worth domains
     EventBus->>User: Update real-time dashboard widgets
     end
 
-    rect rgb(248,248,255)
+    rect rgb(55,45,70)
     Note over User,TxnDB: Phase 4: User Interaction & Learning
     User->>User: Views transaction in app, may adjust category
     User->>TxnDB: Category correction or additional tagging
@@ -1317,6 +1331,7 @@ sequenceDiagram
 Based on your domain ERD analysis and observed functionality:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 erDiagram
     TRANSACTION {
         string id PK
@@ -1429,6 +1444,7 @@ erDiagram
 **ML Model Architecture** *(inferred from behavior)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart TB
     subgraph "Input Features"
         A[Transaction Description/Narration]
@@ -1539,6 +1555,7 @@ flowchart TB
 **Event-Driven Integration Pattern** *(inferred from observed behavior)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant TxnDomain as Transaction Domain
@@ -1550,13 +1567,13 @@ sequenceDiagram
     participant Dashboard as Dashboard Service
     participant User as User Interface
 
-    rect rgb(240,248,255)
+    rect rgb(45,55,70)
     Note over TxnDomain,EventBus: Transaction Processing Complete
     TxnDomain->>EventBus: Publish transaction.created event
     TxnDomain->>EventBus: Include transaction metadata (amount, category, account, merchant)
     end
 
-    rect rgb(248,255,248)
+    rect rgb(45,65,45)
     Note over EventBus,BillsDomain: Cross-Domain Updates Triggered
     EventBus->>SpendingDomain: Update spending category totals
     EventBus->>CashFlowDomain: Update incoming/outgoing calculations  
@@ -1564,7 +1581,7 @@ sequenceDiagram
     EventBus->>BillsDomain: Check if transaction matches pending bill
     end
 
-    rect rgb(255,248,240)
+    rect rgb(70,60,45)
     Note over Dashboard,User: Real-time UI Updates
     Dashboard->>Dashboard: Aggregate updated domain data
     Dashboard->>User: Refresh affected widgets (Spending, Cash Flow, Net Worth)
@@ -1635,6 +1652,7 @@ Fold approaches this differently. Instead of asking users to remember and input 
 **Event-Driven Bill Intelligence**: From the technical architecture analysis, Fold's Bills domain operates as a sophisticated event-driven system:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Transaction Stream Analysis"
         A[New Transaction Event] --> B[Recurring Pattern Detector]
@@ -1671,6 +1689,7 @@ graph TB
 
 **The Discovery Moment** *(Observed)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Bill Discovery User Journey
     section Pattern Recognition
@@ -1731,6 +1750,7 @@ The Bills widget on the dashboard provides instant financial awareness:
 Bills in Fold aren't just reminders - they're central to the platform's financial intelligence:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Bills Intelligence Hub"
         A[Bills Service] --> B[Cash Flow Predictions]
@@ -1791,6 +1811,7 @@ Fold doesn't just aggregate investment data—it transforms fragmented investmen
 **Comprehensive Integration Strategy** *(Inferred from observed capabilities)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Data Ingestion Layer"
         A[Finvu AA Integration] --> B[Real-time Account Data]
@@ -1841,6 +1862,7 @@ The dashboard Investment widget displays total portfolio value, overall XIRR ret
 
 **The Investment Screen Journey** *(Observed architecture)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Investment Portfolio Discovery
     section Widget View  
@@ -1890,6 +1912,7 @@ Through CDSL/NSDL integration, Fold accesses complete demat account holdings:
 Fold doesn't just show what you own—it analyzes portfolio composition with institutional-grade insights:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Portfolio Analytics Engine"
         A[Holdings Data] --> B[Asset Classification]
@@ -1943,6 +1966,7 @@ graph LR
 Investment data in Fold powers multiple domains beyond portfolio tracking:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Investment Intelligence Hub"
         A[Investment Service] --> B[Net Worth Calculations]
@@ -1994,6 +2018,7 @@ In one of the most creative product innovations in personal finance, Fold treats
 **Cross-Domain Aggregation Engine** *(Inferred from comprehensive net worth calculations)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Asset Sources"
         A[Bank Balances] --> B[Accounts Domain]
@@ -2041,6 +2066,7 @@ graph TB
 
 **The Personal Ticker Experience** *(Observed)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Personal Financial Ticker Journey
     section Discovery
@@ -2075,6 +2101,7 @@ journey
 The Net Worth service doesn't manually poll other domains—it operates through an event-driven architecture that updates in real-time:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -2196,6 +2223,7 @@ Fold has developed **F1**, a proprietary machine learning engine specifically bu
 **Intelligent Transaction Processing Pipeline** *(Confirmed technical architecture)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Data Ingestion Layer"
         A[AA Transaction Stream] --> B[Transaction Normalizer]
@@ -2239,6 +2267,7 @@ The dashboard Spending Summary widget instantly shows categorized spending for t
 
 **The Spending Analysis Journey** *(Observed capabilities)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Spending Intelligence Discovery
     section Initial Discovery
@@ -2273,6 +2302,7 @@ Fold's merchant recognition engine handles the complexity of Indian payment ecos
 **ML Categorization Intelligence** *(Technical inference from accurate categorization)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant AA as Account Aggregator
@@ -2342,6 +2372,7 @@ Fold goes beyond simple categorization to provide behavioral spending intelligen
 Spending analysis in Fold powers intelligence across multiple domains:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Spending Intelligence Hub"  
         A[Spending Analysis Service] --> B[Budget Planning Intelligence]
@@ -2385,6 +2416,7 @@ What appears as instant, accurate transaction categorization is actually a sophi
 
 **Real-time Learning Loop**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "The Magic Experience"
         A[User Makes Transaction] --> B[Instantly Appears Categorized]
@@ -2422,6 +2454,7 @@ graph TB
 
 **1. Real-time Processing Pipeline**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant FIP as Financial Institution
@@ -2515,6 +2548,7 @@ Fold has revolutionized transaction search by implementing advanced Natural Lang
 
 **Advanced NLP Search Architecture** *(Technical implementation)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -2574,6 +2608,7 @@ Fold doesn't just link your accounts—it orchestrates them into a unified finan
 **The Account Orchestration Engine** *(Inferred from seamless multi-bank experience)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "User Experience Layer"
         A[Single Dashboard View] --> B[Unified Balance Widget]
@@ -2622,6 +2657,7 @@ When users first connect their accounts, Fold reveals the complete picture of th
 
 **The Account Management Journey** *(Observed capabilities)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Account Orchestration User Experience
     section Initial Setup
@@ -2649,6 +2685,7 @@ journey
 Fold manages complex consent lifecycles across multiple financial institutions simultaneously:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -2700,6 +2737,7 @@ Fold doesn't just show individual accounts—it understands relationships betwee
 
 **Cross-Account Analytics Engine**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Account Intelligence Hub"
         A[Multi-Account Data] --> B[Cash Flow Analysis]
@@ -2744,6 +2782,7 @@ graph LR
 Account data in Fold serves as the foundational layer for all financial intelligence:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Account Orchestration Hub"
         A[Unified Account Service] --> B[Transaction Intelligence]
@@ -2807,6 +2846,7 @@ Fold doesn't just show you what happened—it predicts what will happen. Through
 **The Cash Flow Intelligence System** *(Inferred from sophisticated cash flow predictions)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Data Integration Layer"
         A[Transaction Stream Analysis] --> B[Historical Pattern Recognition]
@@ -2851,6 +2891,7 @@ The dashboard Cash Flow widget instantly displays current month's incoming, outg
 
 **The Cash Flow Intelligence Journey** *(Observed capabilities)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 journey
     title Cash Flow Intelligence Experience
     section Initial Discovery
@@ -2878,6 +2919,7 @@ journey
 Fold's cash flow engine analyzes multiple data streams to create predictive models:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -2924,6 +2966,7 @@ Fold creates multiple scenario models for cash flow management:
 
 **Scenario Modeling Capabilities**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Cash Flow Scenarios"
         A[Base Case Scenario] --> B[Conservative Scenario]
@@ -2980,6 +3023,7 @@ graph LR
 Cash flow analysis in Fold serves as the strategic planning hub for all financial decisions:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Cash Flow Intelligence Hub"
         A[Predictive Cash Flow Engine] --> B[Investment Timing Optimization]
@@ -3046,6 +3090,7 @@ In India's complex financial landscape, consumer financial data lives across doz
 **The Integration Architecture** *(Inferred from comprehensive financial data aggregation)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Integration Orchestration Layer"
         A[API Gateway] --> B[Service Mesh]
@@ -3105,6 +3150,7 @@ graph TB
 
 **Pattern 1: Account Aggregator Mastery**
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -3131,6 +3177,7 @@ sequenceDiagram
 
 **Pattern 2: Multi-RTA Investment Integration**
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Investment Data Sources"
         A[CAMS RTA] --> D[Investment Aggregator]
@@ -3155,6 +3202,7 @@ graph LR
 
 **Pattern 3: Bharat BillPay Integration**
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -3192,6 +3240,7 @@ sequenceDiagram
 **The Technical Sophistication Indicators**:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Service Reliability Patterns"
         A[Circuit Breaker] --> B[Exponential Backoff]
@@ -3224,6 +3273,7 @@ graph TB
 
 **Advanced Error Handling Strategy**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart TB
     A[API Request] --> B{Service Available?}
     B -->|Yes| C[Execute Request]
@@ -3277,6 +3327,7 @@ flowchart TB
 **Monitoring & Observability** *(Inferred from system reliability)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Metrics Collection"
         A[Request Latency] --> D[Monitoring Dashboard]
@@ -3332,6 +3383,7 @@ Modern financial applications collect massive amounts of data, but most fail at 
 **The Intelligence Architecture** *(Inferred from sophisticated categorization and predictive capabilities)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Data Ingestion Layer"
         A[Transaction Stream] --> B[Account Balance Feed]
@@ -3389,6 +3441,7 @@ graph TB
 
 **Pattern 1: Real-time Transaction Intelligence**
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant AA as Account Aggregator
@@ -3411,6 +3464,7 @@ sequenceDiagram
 
 **Pattern 2: Batch Intelligence Processing**
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     subgraph "Batch Processing Pipeline"
         A[Historical Data Analysis] --> B[Pattern Recognition]
@@ -3432,6 +3486,7 @@ graph LR
 
 **Pattern 3: Hybrid Intelligence Architecture**
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Real-time Intelligence"
         A[Transaction Classification] --> B[Instant Categorization]
@@ -3476,6 +3531,7 @@ graph TB
 **Advanced Intelligence Examples** *(Inferred from system sophistication)*:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Behavioral Intelligence"
         A[Spending Pattern Recognition] --> B[Seasonal Adjustments]
@@ -3519,6 +3575,7 @@ Fold has developed **F1**, an in-house machine learning engine specifically desi
 
 **Technical Architecture of F1**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "F1 Transaction Processing Pipeline"
         A[Raw Bank Statement Data] --> B[Transaction Parser]
@@ -3565,6 +3622,7 @@ Fold has implemented sophisticated Natural Language Processing for transaction s
 
 **Advanced NLP Architecture**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 sequenceDiagram
     autonumber
     participant User
@@ -3598,6 +3656,7 @@ sequenceDiagram
 
 **Model Training Infrastructure**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 flowchart TB
     A[Raw Transaction Data] --> B[Feature Engineering Pipeline]
     B --> C[Data Validation & Quality Checks]
@@ -3643,6 +3702,7 @@ flowchart TB
 
 3. **Real-time Inference Architecture**:
    ```mermaid
+   %%{init: {'theme':'dark'}}%%
    graph LR
        A[New Transaction] --> B[Feature Extraction]
        B --> C[Model Inference Service]
@@ -3665,6 +3725,7 @@ flowchart TB
 **Deployment Strategy Excellence**:
 
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Model Development"
         A[Data Scientists] --> B[Model Training]
@@ -3733,6 +3794,7 @@ Fold's deep integration with the Account Aggregator framework creates a signific
 
 **The Integration Network Effect**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Fold's Integration Advantage"
         A[Deep AA Expertise] --> B[Faster Feature Development]
@@ -3765,6 +3827,7 @@ Fold's intelligence engine creates a powerful network effect where more users ge
 
 **The Intelligence Flywheel** *(Observed from system sophistication)*:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     A[More Users] --> B[More Transaction Data]
     B --> C[Better ML Training Data]
@@ -3817,6 +3880,7 @@ Fold has established a premium user experience standard that creates switching c
 
 **The Experience Network Effect**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph LR
     A[Premium UX Standard] --> B[Higher User Expectations]
     B --> C[Competitive Pressure on Market]
@@ -3858,6 +3922,7 @@ Fold has positioned itself in the premium segment of Indian personal finance man
 
 **Premium Strategy Benefits**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Premium Market Advantages"
         A[Higher ARPU Potential] --> B[Better Unit Economics]
@@ -3893,6 +3958,7 @@ Fold's architecture suggests evolution toward a comprehensive financial platform
 
 **Platform Network Effects**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Platform Value Creation"
         A[Financial Data Aggregation] --> B[Intelligence Generation]
@@ -3918,6 +3984,7 @@ graph TB
 
 **Fold's Differentiation Matrix**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     subgraph "Fold's Competitive Position"
         A[Data Integration Depth] --> D[Market Leadership]
@@ -3970,6 +4037,7 @@ Fold's success is driving industry-wide changes in how personal finance manageme
 
 **The Fold Formula for Success**:
 ```mermaid
+%%{init: {'theme':'dark'}}%%
 graph TB
     A[Deep Technical Integration] --> D[Sustainable Competitive Moats]
     B[Premium User Experience] --> D
